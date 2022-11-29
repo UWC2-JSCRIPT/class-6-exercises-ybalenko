@@ -16,7 +16,7 @@ class Car {
         this.currentSpeed -= this.accelerationRate;
     }
     toString() {
-        console.log(`model ${this.model}, currentSpeed: ${this.currentSpeed}`)
+        console.log(`model ${this.model}, currentSpeed: ${this.currentSpeed}`);
     }
 
 }
@@ -34,12 +34,13 @@ class ElectricCar extends Car {
         this.electricMotor = true;
     }
     accelerate() {
-        return (super.accelerate() * super.accelerate());
+        super.accelerate();
+        super.accelerate();
     }
 
     toString() {
         //return `model ${super.toString()}`
-        console.log(`This is an electric car model ${this.model}`)
+        console.log(`This is an electric car model ${this.model}`);
     }
 }
 
@@ -54,9 +55,8 @@ tacoma.toString()
 
 const modelX = new ElectricCar('Model X')
 modelX.accelerate()
-//console.log(modelX.currentSpeed)
 modelX.accelerate()
-//console.log(modelX.currentSpeed)
+console.log(modelX.currentSpeed)
 modelX.brake()
 modelX.toString()
 
